@@ -85,9 +85,13 @@ namespace ToyRobotSim
         {
             if (OnTable)
             {
-                return X.ToString() + "," + Y.ToString() + "," + Enum.GetName(typeof(Directions), (Facing % 4));
+                return X.ToString() + "," + Y.ToString() + "," + Enum.GetName(typeof(Directions), mod(Facing));
             }
             return null;
+        }
+        private int mod(int x)
+        {
+            return (x % 4 + 4) % 4;
         }
     }
 }
