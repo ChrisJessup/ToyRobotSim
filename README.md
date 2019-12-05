@@ -1,5 +1,5 @@
 # Toy Robot Simimulator
-This repository contains the neccessary files for a toy robot simulator game created by Christopher Jessup for Mott MacDonald. The file structire of the repository is explained below:
+This repository contains the necessary files for a toy robot simulator game created by Christopher Jessup for Mott MacDonald. The file structire of the repository is explained below:
 
 ## ToyRobotSim
 This folder contians the files needed to build and play the game: **Game.cs** and **Robot.cs**.
