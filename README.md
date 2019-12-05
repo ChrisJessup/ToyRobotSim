@@ -4,7 +4,7 @@ This repository contains the necessary files for a toy robot simulator game crea
 ## ToyRobotSim
 This folder contians the files needed to build and play the game: **Game.cs** and **Robot.cs**.
 
-**Game.cs** contains the main method and handles all input and output for the game.
+**Game.cs** contains the main method and handles all input and output (through standard input / ouptut) for the simulator.
 
 **Robot.cs** contains all information about the robot and handles the robot's movement.
 
