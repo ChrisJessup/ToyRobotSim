@@ -14,9 +14,9 @@ namespace ToyRobotSim
         //Constructor
         public Robot(Robot[,] table)
         {
-            X = 0;
-            Y = 0;
-            Facing = 0;
+            X = -1;
+            Y = -1;
+            Facing = -1;
             Table = table;
             OnTable = false;
         }
@@ -41,37 +41,36 @@ namespace ToyRobotSim
         {
             if (OnTable)
             {
-                //move north
-                if ((Facing % 4) == (int)Directions.NORTH)
+                switch (mod(Facing))
                 {
-                    if (Y < Table.GetLength(1) - 1)
-                    {
-                        Y += 1;
-                    }
-                }
-                //move east
-                if ((Facing % 4) == (int)Directions.EAST)
-                {
-                    if (X < Table.GetLength(0) - 1)
-                    {
-                        X += 1;
-                    }
-                }
-                //move south
-                if ((Facing % 4) == (int)Directions.SOUTH)
-                {
-                    if (Y > 0)
-                    {
-                        Y -= 1;
-                    }
-                }
-                //move west
-                if ((Facing % 4) == (int)Directions.WEST)
-                {
-                    if (X > 0)
-                    {
-                        X -= 1;
-                    }
+                    //Move North
+                    case (int)Directions.NORTH:
+                        if (Y < Table.GetLength(1) - 1)
+                        {
+                            Y += 1;
+                        }
+                        break;
+                    //Move East    
+                    case (int)Directions.EAST:
+                        if (X < Table.GetLength(0) - 1)
+                        {
+                            X += 1;
+                        }
+                        break;
+                    //Move South
+                    case (int)Directions.SOUTH:
+                        if (Y > 0)
+                        {
+                            Y -= 1;
+                        }
+                        break;
+                    //Move West
+                    case (int)Directions.WEST:
+                        if (X > 0)
+                        {
+                            X -= 1;
+                        }
+                        break;
                 }
             }
         }

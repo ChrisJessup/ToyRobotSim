@@ -18,7 +18,7 @@ namespace ToyRobotSim
             while ((Input = Console.ReadLine()) != null)
             {
                 //Regex match for PLACE with NORTH
-                if(Regex.Match(Input, @"PLACE\s\d+[,]\d+[,]NORTH").Success)
+                if (Regex.Match(Input, @"\APLACE\s\d+[,]\d+[,]NORTH\Z").Success)
                 {
                     int x = Int32.Parse(Regex.Match(Input, @"\d+").ToString());
                     int y = Int32.Parse(Regex.Match(Input, @"\d+").NextMatch().ToString());
@@ -26,7 +26,7 @@ namespace ToyRobotSim
                 }
 
                 //Regex match for PLACE with EAST
-                else if (Regex.Match(Input, @"PLACE\s\d+[,]\d+[,]EAST").Success)
+                else if (Regex.Match(Input, @"\APLACE\s\d+[,]\d+[,]EAST\Z").Success)
                 {
                     int x = Int32.Parse(Regex.Match(Input, @"\d+").ToString());
                     int y = Int32.Parse(Regex.Match(Input, @"\d+").NextMatch().ToString());
@@ -34,7 +34,7 @@ namespace ToyRobotSim
                 }
 
                 //Regex match for PLACE with SOUTH
-                else if (Regex.Match(Input, @"PLACE\s\d+[,]\d+[,]SOUTH").Success)
+                else if (Regex.Match(Input, @"\APLACE\s\d+[,]\d+[,]SOUTH\Z").Success)
                 {
                     int x = Int32.Parse(Regex.Match(Input, @"\d+").ToString());
                     int y = Int32.Parse(Regex.Match(Input, @"\d+").NextMatch().ToString());
@@ -42,7 +42,7 @@ namespace ToyRobotSim
                 }
 
                 //Regex match for PLACE with WEST
-                else if (Regex.Match(Input, @"PLACE\s\d+[,]\d+[,]WEST").Success)
+                else if (Regex.Match(Input, @"\APLACE\s\d+[,]\d+[,]WEST\Z").Success)
                 {
                     int x = Int32.Parse(Regex.Match(Input, @"\d+").ToString());
                     int y = Int32.Parse(Regex.Match(Input, @"\d+").NextMatch().ToString());
@@ -50,28 +50,28 @@ namespace ToyRobotSim
                 }
 
                 //Regex match for MOVE
-                else if (Regex.Match(Input, @"MOVE").Success)
+                else if (Regex.Match(Input, @"\AMOVE\Z").Success)
                 {
                     Bot.Move();
                 }
 
                 //Regex match for LEFT
-                else if (Regex.Match(Input, @"LEFT").Success)
+                else if (Regex.Match(Input, @"\ALEFT\Z").Success)
                 {
                     Bot.Left();
                 }
 
                 //Regex match for RIGHT
-                else if (Regex.Match(Input, @"RIGHT").Success)
+                else if (Regex.Match(Input, @"\ARIGHT\Z").Success)
                 {
                     Bot.Right();
                 }
 
                 //Regex match for REPORT
-                else if (Regex.Match(Input, @"REPORT").Success)
+                else if (Regex.Match(Input, @"\AREPORT\Z").Success)
                 {
                     string result = Bot.Report();
-                    if(result != null)
+                    if (result != null)
                     {
                         Console.WriteLine(result);
                     }
